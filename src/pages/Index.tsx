@@ -209,13 +209,16 @@ const Index = () => {
                   </p>
                 </li>
                 <li className="border-l-2 border-foreground pl-5">
-                  <h3 className="font-bold text-lg mb-1">Hubs</h3>
+                  <h3 className="font-bold text-lg mb-1">Células</h3>
                   <p className="text-foreground/80 mb-3">
                     Às terças, temos nossos encontros nas casas.
                   </p>
-                  <button className="bg-primary text-primary-foreground px-5 py-2 rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">
-                    Encontre um hub
-                  </button>
+                  <Link
+                    to="/hubs"
+                    className="inline-block bg-primary text-primary-foreground px-5 py-2 rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    Encontre uma célula
+                  </Link>
                 </li>
                 <li className="border-l-2 border-foreground pl-5">
                   <h3 className="font-bold text-lg mb-1">Casa do Encontro</h3>
@@ -232,8 +235,8 @@ const Index = () => {
               <span className="subtitle">Onde estamos</span>
               <h2 className="section-title mt-5 mb-8">Araçatuba/SP</h2>
               <div className="rounded-lg overflow-hidden mb-6">
-                <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=Avenida%20Brasilia,%202401%20-%20Ara%C3%A7atuba/SP"
+              <iframe
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Carlos+Carli,+124+-+Monterrey,+Ara%C3%A7atuba+-+SP"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -243,11 +246,16 @@ const Index = () => {
                   title="Localização da Igreja Vision no mapa"
                 />
               </div>
-              <p className="text-foreground/80">
+              <a
+                href="https://www.google.com/maps/place/R.+Carlos+Carli,+124+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-690"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-accent transition-colors block"
+              >
                 <strong className="text-foreground">Endereço</strong>
                 <br />
-                Av. Brasília, 2401 - Jardim Nova Yorque - Araçatuba/SP
-              </p>
+                R. Carlos Carli, 124 - Monterrey - Araçatuba/SP
+              </a>
             </div>
           </div>
         </div>
