@@ -24,10 +24,10 @@ const missionCards = [
     link: "/contribua",
   },
   {
-    title: "Hubs",
+    title: "Células",
     description: "Pequenos grupos reunidos em casas para orar e estudar a Bíblia",
     image: "/images/card-hubs.jpg",
-    link: "/",
+    link: "/hubs",
   },
   {
     title: "Seja membro",
@@ -236,7 +236,7 @@ const Index = () => {
               <h2 className="section-title mt-5 mb-8">Araçatuba/SP</h2>
               <div className="rounded-lg overflow-hidden mb-6">
               <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Carlos+Carli,+124+-+Monterrey,+Ara%C3%A7atuba+-+SP"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -247,14 +247,14 @@ const Index = () => {
                 />
               </div>
               <a
-                href="https://www.google.com/maps/place/R.+Carlos+Carli,+124+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-690"
+                href="https://www.google.com/maps/place/R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-accent transition-colors block"
               >
                 <strong className="text-foreground">Endereço</strong>
                 <br />
-                R. Carlos Carli, 124 - Monterrey - Araçatuba/SP
+                R. Ernesto Bergamaschi, 96 - Monterrey - Araçatuba/SP
               </a>
             </div>
           </div>
