@@ -111,12 +111,6 @@ const Index = () => {
             </div>
 
             <div className="xl:col-span-5 xl:col-start-8 relative">
-              {/* Quote overlay */}
-              <div className="hidden xl:block absolute -left-8 top-8 z-10 bg-primary text-primary-foreground p-6 rounded-lg max-w-[280px] text-sm leading-relaxed shadow-lg">
-                Deus amou o mundo de tal maneira, que deu seu único filho, para que todo aquele que
-                nele crê tenha a vida eterna.
-              </div>
-
               {/* Photo slider */}
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                 {slideImages.map((src, i) => (
