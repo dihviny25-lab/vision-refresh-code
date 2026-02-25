@@ -26,7 +26,7 @@ const Footer = () => (
           <nav aria-label="Links do rodapé">
             <ul className="space-y-3 text-sm">
               <li><Link to="/contribua" className="text-footer-foreground/80 hover:text-accent transition-colors">Contribua</Link></li>
-              <li><Link to="/" className="text-footer-foreground/80 hover:text-accent transition-colors">Hubs</Link></li>
+              <li><Link to="/hubs" className="text-footer-foreground/80 hover:text-accent transition-colors">Células</Link></li>
               <li><Link to="/confissao-de-fe" className="text-footer-foreground/80 hover:text-accent transition-colors">Confissão de fé</Link></li>
               <li><Link to="/musicas" className="text-footer-foreground/80 hover:text-accent transition-colors">Músicas</Link></li>
               <li><Link to="/lideranca" className="text-footer-foreground/80 hover:text-accent transition-colors">Líderes</Link></li>
@@ -51,7 +51,7 @@ const Footer = () => (
         <div>
           <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">Endereço</h3>
           <p className="text-sm text-footer-foreground/80 leading-relaxed">
-            R. Carlos Carli, 124, Monterrey<br />
+            R. Ernesto Bergamaschi, 96, Monterrey<br />
             Araçatuba/SP
           </p>
           <div className="flex gap-3 mt-6">
