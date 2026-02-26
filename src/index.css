@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 0 0% 7%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 0 0% 0%;
+    --primary: 0 0% 7%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 30 5% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 0 0% 96%;
+    --muted: 30 5% 96%;
     --muted-foreground: 0 0% 45%;
 
     --accent: 24 95% 53%;
@@ -30,19 +30,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
+    --border: 0 0% 92%;
     --input: 0 0% 90%;
     --ring: 24 95% 53%;
 
-    --radius: 0.25rem;
+    --radius: 0.75rem;
 
     /* Custom Vision tokens */
-    --topbar-bg: 0 0% 0%;
+    --topbar-bg: 0 0% 4%;
     --topbar-fg: 0 0% 100%;
-    --footer-bg: 0 0% 8%;
+    --footer-bg: 0 0% 4%;
     --footer-fg: 0 0% 100%;
-    --gradient-start: 240 100% 50%;
-    --gradient-end: 0 100% 50%;
+    --gradient-start: 24 95% 53%;
+    --gradient-end: 15 90% 45%;
     --card-overlay: 0 0% 0%;
 
     --sidebar-background: 0 0% 98%;
@@ -56,24 +56,24 @@
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
     --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: 0 0% 98%;
     --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
     --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
     --ring: 24 95% 53%;
   }
 }
@@ -94,11 +94,11 @@
 
 @layer components {
   .subtitle {
-    @apply text-xs font-semibold uppercase tracking-[0.25em] text-foreground;
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-accent;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-foreground leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-[1.1] tracking-tight;
   }
 
   .container-vision {
@@ -106,18 +106,19 @@
   }
 
   .card-overlay {
-    @apply relative overflow-hidden rounded-lg;
+    @apply relative overflow-hidden rounded-2xl;
     background-size: cover;
     background-position: center;
   }
 
   .card-overlay::before {
     content: '';
-    @apply absolute inset-0 bg-foreground/60 transition-all duration-300;
+    @apply absolute inset-0 transition-all duration-500;
+    background: linear-gradient(to top, hsl(0 0% 0% / 0.85) 0%, hsl(0 0% 0% / 0.2) 60%, transparent 100%);
   }
 
   .card-overlay:hover::before {
-    @apply bg-foreground/40;
+    background: linear-gradient(to top, hsl(0 0% 0% / 0.75) 0%, hsl(0 0% 0% / 0.1) 60%, transparent 100%);
   }
 
   .gradient-banner {
