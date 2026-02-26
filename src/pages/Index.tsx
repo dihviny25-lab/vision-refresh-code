@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Calendar, Users, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "../components/Layout";
-import AnimatedSection from "../components/AnimatedSection";
+import AnimatedSection, { ParallaxSection } from "../components/AnimatedSection";
 
 const slideImages = [
   "/images/slide-1.jpg",
@@ -80,15 +80,21 @@ const Index = () => {
           rel="noopener noreferrer"
           className="block relative group overflow-hidden"
         >
-          <picture>
-            <source media="(min-width: 768px)" srcSet="/images/banner-desktop.jpg" />
-            <img
-              src="/images/banner-mobile.jpg"
-              alt="Série Dons - Assista agora"
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              loading="eager"
-            />
-          </picture>
+          <motion.div
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <picture>
+              <source media="(min-width: 768px)" srcSet="/images/banner-desktop.jpg" />
+              <img
+                src="/images/banner-mobile.jpg"
+                alt="Série Dons - Assista agora"
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                loading="eager"
+              />
+            </picture>
+          </motion.div>
         </a>
       </section>
 
@@ -96,7 +102,7 @@ const Index = () => {
       <section className="py-16 md:py-28" aria-labelledby="quem-somos-title">
         <div className="container-vision">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-center">
-            <AnimatedSection className="xl:col-span-5">
+            <AnimatedSection className="xl:col-span-5" variant="fade-right">
               <span className="subtitle">Quem somos</span>
               <h1 id="quem-somos-title" className="section-title mt-4 mb-6">
                 Um lugar de<br />transformação
@@ -132,36 +138,38 @@ const Index = () => {
               </Link>
             </AnimatedSection>
 
-            <AnimatedSection className="xl:col-span-6 xl:col-start-7" delay={0.15}>
+            <AnimatedSection className="xl:col-span-6 xl:col-start-7" delay={0.15} variant="fade-left">
               {/* Photo slider */}
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-foreground/10">
-                {slideImages.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`Momentos na Vision ${i + 1}`}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      i === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                    loading={i === 0 ? "eager" : "lazy"}
-                  />
-                ))}
-                {/* Dots */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                  {slideImages.map((_, i) => (
-                    <button
+              <ParallaxSection speed={0.15}>
+                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-foreground/10">
+                  {slideImages.map((src, i) => (
+                    <img
                       key={i}
-                      onClick={() => setCurrentSlide(i)}
-                      className={`rounded-full transition-all duration-300 ${
-                        i === currentSlide
-                          ? "bg-accent w-6 h-2.5"
-                          : "bg-primary-foreground/40 w-2.5 h-2.5 hover:bg-primary-foreground/60"
+                      src={src}
+                      alt={`Momentos na Vision ${i + 1}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        i === currentSlide ? "opacity-100" : "opacity-0"
                       }`}
-                      aria-label={`Ir para foto ${i + 1}`}
+                      loading={i === 0 ? "eager" : "lazy"}
                     />
                   ))}
+                  {/* Dots */}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {slideImages.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrentSlide(i)}
+                        className={`rounded-full transition-all duration-300 ${
+                          i === currentSlide
+                            ? "bg-accent w-6 h-2.5"
+                            : "bg-primary-foreground/40 w-2.5 h-2.5 hover:bg-primary-foreground/60"
+                        }`}
+                        aria-label={`Ir para foto ${i + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </ParallaxSection>
             </AnimatedSection>
           </div>
         </div>
@@ -170,7 +178,7 @@ const Index = () => {
       {/* Missão */}
       <section className="py-16 md:py-24 bg-secondary" aria-labelledby="missao-title">
         <div className="container-vision">
-          <AnimatedSection className="text-center max-w-2xl mx-auto mb-14">
+          <AnimatedSection className="text-center max-w-2xl mx-auto mb-14" variant="blur">
             <span className="subtitle">Missão</span>
             <h2 id="missao-title" className="section-title mt-4 mb-5">
               Compartilhar o amor de Deus
@@ -190,7 +198,7 @@ const Index = () => {
                 : { to: card.link };
 
               return (
-                <AnimatedSection key={card.title} delay={i * 0.08}>
+                <AnimatedSection key={card.title} delay={i * 0.1} variant="scale">
                   <CardWrapper
                     {...(cardProps as any)}
                     className="card-overlay min-h-[320px] flex items-end p-7 group"
@@ -216,53 +224,58 @@ const Index = () => {
         <div className="container-vision">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-16">
             {/* Programação */}
-            <AnimatedSection className="xl:col-span-6">
+            <AnimatedSection className="xl:col-span-6" variant="fade-right">
               <span className="subtitle">Fique por dentro</span>
               <h2 className="section-title mt-4 mb-10">Nossa programação</h2>
               <div className="space-y-6">
-                {scheduleItems.map((item) => (
-                  <div
+                {scheduleItems.map((item, i) => (
+                  <AnimatedSection
                     key={item.title}
-                    className="flex gap-5 p-5 rounded-2xl hover:bg-secondary transition-colors group"
+                    delay={i * 0.12}
+                    variant="fade-up"
                   >
-                    <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
-                      <item.icon size={22} />
+                    <div className="flex gap-5 p-5 rounded-2xl hover:bg-secondary transition-colors group">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                        <item.icon size={22} />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                        {item.cta && (
+                          <Link
+                            to={item.cta.to}
+                            className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:gap-2.5 transition-all"
+                          >
+                            {item.cta.label} <ArrowRight size={14} />
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                      {item.cta && (
-                        <Link
-                          to={item.cta.to}
-                          className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:gap-2.5 transition-all"
-                        >
-                          {item.cta.label} <ArrowRight size={14} />
-                        </Link>
-                      )}
-                    </div>
-                  </div>
+                  </AnimatedSection>
                 ))}
               </div>
             </AnimatedSection>
 
             {/* Localização */}
-            <AnimatedSection className="xl:col-span-5 xl:col-start-8" delay={0.15}>
+            <AnimatedSection className="xl:col-span-5 xl:col-start-8" delay={0.15} variant="fade-left">
               <span className="subtitle">Onde estamos</span>
               <h2 className="section-title mt-4 mb-10">Araçatuba/SP</h2>
-              <div className="rounded-2xl overflow-hidden mb-6 shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
-                  width="100%"
-                  height="280"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização da Igreja Vision no mapa"
-                />
-              </div>
+              <AnimatedSection variant="scale" delay={0.3}>
+                <div className="rounded-2xl overflow-hidden mb-6 shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
+                    width="100%"
+                    height="280"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização da Igreja Vision no mapa"
+                  />
+                </div>
+              </AnimatedSection>
               <a
                 href="https://www.google.com/maps/place/R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
                 target="_blank"
@@ -283,21 +296,23 @@ const Index = () => {
       </section>
 
       {/* CTA Confissão de Fé */}
-      <section className="gradient-banner py-20 md:py-24">
+      <section className="gradient-banner py-20 md:py-24 overflow-hidden">
         <div className="container-vision flex flex-col md:flex-row items-center justify-between gap-8">
-          <AnimatedSection>
+          <AnimatedSection variant="fade-right">
             <p className="text-primary-foreground text-xl md:text-3xl font-semibold leading-snug max-w-2xl">
               Tendo sido, pois, justificados pela fé, temos paz com Deus, por nosso Senhor Jesus
               Cristo.
             </p>
           </AnimatedSection>
-          <Link
-            to="/confissao-de-fe"
-            className="shrink-0 bg-primary-foreground text-foreground px-7 py-3.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
-          >
-            Confissão de fé
-            <ArrowRight size={15} />
-          </Link>
+          <AnimatedSection variant="fade-left" delay={0.2}>
+            <Link
+              to="/confissao-de-fe"
+              className="shrink-0 bg-primary-foreground text-foreground px-7 py-3.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+            >
+              Confissão de fé
+              <ArrowRight size={15} />
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>
