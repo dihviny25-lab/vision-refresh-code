@@ -1,4 +1,6 @@
+import { MapPin, Clock, Users } from "lucide-react";
 import Layout from "../components/Layout";
+import AnimatedSection from "../components/AnimatedSection";
 
 const celulas = [
   {
@@ -48,48 +50,41 @@ const celulas = [
 const Hubs = () => {
   return (
     <Layout>
-      <section className="py-16 md:py-24" aria-labelledby="celulas-title">
+      <section className="py-16 md:py-28" aria-labelledby="celulas-title">
         <div className="container-vision">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
             <span className="subtitle">Células</span>
-            <h1 id="celulas-title" className="section-title mt-5 mb-5">
+            <h1 id="celulas-title" className="section-title mt-4 mb-5">
               Encontre a célula mais próxima de você
             </h1>
-          </div>
+            <p className="text-muted-foreground leading-relaxed text-lg">
+              Nossas células são pequenos grupos que se encontram semanalmente para compartilhar a
+              palavra de Deus e criar amizades profundas e reais.
+            </p>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-start">
-            {/* Texto descritivo */}
-            <div className="xl:col-span-5">
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                Nossas células são pequenos grupos que se encontram semanalmente,
-                para compartilhar a palavra de Deus, compartilhar experiências, criando um ambiente de
-                amizades profundas e reais, procure uma mais próxima de você.
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                Algumas igrejas trabalham com modelo de célula, nós somos diferentes em alguns aspectos,
-                exatamente por isso escolhemos colocar um nome diferente.
-              </p>
-              <p className="text-foreground/80 leading-relaxed">
-                Quero desafiar você a frequentar uma de nossas células e você irá perceber claramente a
-                presença de Deus e o ambiente transformador.
-              </p>
-            </div>
-
-            {/* Lista de células */}
-            <div className="xl:col-span-6 xl:col-start-7">
-              <ul className="divide-y divide-border">
-                {celulas.map((celula) => (
-                  <li key={celula.name} className="py-6 first:pt-0 last:pb-0">
-                    <h2 className="text-xl font-bold text-foreground mb-1">{celula.name}</h2>
-                    <p className="text-foreground/80 text-sm mb-1">
-                      <strong>Líderes:</strong> {celula.leaders}
-                    </p>
-                    <p className="text-foreground/80 text-sm">{celula.address}</p>
-                    <p className="text-foreground/60 text-sm">{celula.day}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {celulas.map((celula, i) => (
+              <AnimatedSection key={celula.name} delay={i * 0.06}>
+                <div className="bg-secondary rounded-2xl p-6 hover:shadow-lg hover:shadow-foreground/5 transition-all duration-300 h-full flex flex-col">
+                  <h2 className="text-lg font-bold text-foreground mb-4">{celula.name}</h2>
+                  <div className="space-y-3 text-sm flex-1">
+                    <div className="flex items-start gap-2.5">
+                      <Users size={15} className="shrink-0 text-accent mt-0.5" />
+                      <span className="text-muted-foreground">{celula.leaders}</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <MapPin size={15} className="shrink-0 text-accent mt-0.5" />
+                      <span className="text-muted-foreground">{celula.address}</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <Clock size={15} className="shrink-0 text-accent mt-0.5" />
+                      <span className="text-muted-foreground">{celula.day}</span>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

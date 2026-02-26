@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight, MapPin, Calendar, Users, BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
 import Layout from "../components/Layout";
+import AnimatedSection from "../components/AnimatedSection";
 
 const slideImages = [
   "/images/slide-1.jpg",
@@ -38,6 +41,25 @@ const missionCards = [
   },
 ];
 
+const scheduleItems = [
+  {
+    icon: Calendar,
+    title: "Culto",
+    description: "Todos os domingos, às 18h30, nos reunimos como igreja para adorar a Deus e ouvir sua Palavra.",
+  },
+  {
+    icon: Users,
+    title: "Células",
+    description: "Às terças, temos nossos encontros nas casas.",
+    cta: { label: "Encontre uma célula", to: "/hubs" },
+  },
+  {
+    icon: BookOpen,
+    title: "Casa do Encontro",
+    description: "Às quintas, às 20h30, temos a Casa do Encontro, um momento de oração e compartilhar da Palavra.",
+  },
+];
+
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -56,14 +78,14 @@ const Index = () => {
           href="https://www.youtube.com/watch?v=wIgoMxyw4Vk"
           target="_blank"
           rel="noopener noreferrer"
-          className="block"
+          className="block relative group overflow-hidden"
         >
           <picture>
             <source media="(min-width: 768px)" srcSet="/images/banner-desktop.jpg" />
             <img
               src="/images/banner-mobile.jpg"
               alt="Série Dons - Assista agora"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               loading="eager"
             />
           </picture>
@@ -71,21 +93,21 @@ const Index = () => {
       </section>
 
       {/* Quem Somos */}
-      <section className="py-12 md:py-20" aria-labelledby="quem-somos-title">
+      <section className="py-16 md:py-28" aria-labelledby="quem-somos-title">
         <div className="container-vision">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
-            <div className="xl:col-span-5">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-center">
+            <AnimatedSection className="xl:col-span-5">
               <span className="subtitle">Quem somos</span>
-              <h1 id="quem-somos-title" className="section-title mt-5 mb-5">
-                Um lugar de transformação
+              <h1 id="quem-somos-title" className="section-title mt-4 mb-6">
+                Um lugar de<br />transformação
               </h1>
-              <p className="text-foreground/80 leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-base">
                 Somos uma igreja firmada na palavra de Deus, adotamos a confissão de fé The Gospel
                 Coalition também subscrevemos os símbolos de fé da Atos 29 Brasil. Somos uma igreja
                 que professa a continuidade dos dons, contemporânea em sua forma de culto,
                 monergista quanto a salvação e complementarista quanto ao ministério pastoral.
               </p>
-              <p className="text-foreground/80 leading-relaxed mb-8">
+              <p className="text-muted-foreground leading-relaxed mb-10 text-base">
                 Iniciamos os trabalhos no dia 14 de janeiro de 2018 e nos tornamos uma igreja
                 oficialmente em 5 de maio de 2019.
               </p>
@@ -93,26 +115,26 @@ const Index = () => {
               {/* Pastor card */}
               <Link
                 to="/lideranca"
-                className="flex items-center gap-4 group"
+                className="flex items-center gap-4 group p-4 -ml-4 rounded-2xl hover:bg-secondary transition-colors"
               >
                 <img
                   src="/images/pastor-matheus-dan.jpg"
                   alt="Pastor Matheus Dan"
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-accent/20"
                   loading="lazy"
                 />
                 <div>
-                  <strong className="text-foreground block">Matheus Dan</strong>
-                  <span className="text-sm text-foreground/60 group-hover:text-accent transition-colors">
-                    Conheça o pastor →
+                  <strong className="text-foreground block text-sm">Matheus Dan</strong>
+                  <span className="text-sm text-muted-foreground group-hover:text-accent transition-colors flex items-center gap-1">
+                    Conheça o pastor <ArrowRight size={13} />
                   </span>
                 </div>
               </Link>
-            </div>
+            </AnimatedSection>
 
-            <div className="xl:col-span-5 xl:col-start-8 relative">
+            <AnimatedSection className="xl:col-span-6 xl:col-start-7" delay={0.15}>
               {/* Photo slider */}
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-foreground/10">
                 {slideImages.map((src, i) => (
                   <img
                     key={i}
@@ -125,61 +147,64 @@ const Index = () => {
                   />
                 ))}
                 {/* Dots */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                   {slideImages.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentSlide(i)}
-                      className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                        i === currentSlide ? "bg-accent" : "bg-primary-foreground/50"
+                      className={`rounded-full transition-all duration-300 ${
+                        i === currentSlide
+                          ? "bg-accent w-6 h-2.5"
+                          : "bg-primary-foreground/40 w-2.5 h-2.5 hover:bg-primary-foreground/60"
                       }`}
                       aria-label={`Ir para foto ${i + 1}`}
                     />
                   ))}
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Missão */}
-      <section className="py-12 md:py-16" aria-labelledby="missao-title">
-        <div className="container-vision text-center max-w-3xl mx-auto mb-12">
-          <span className="subtitle">Missão</span>
-          <h2 id="missao-title" className="section-title mt-5 mb-5">
-            Compartilhar o amor de Deus
-          </h2>
-          <p className="text-foreground/80 leading-relaxed">
-            Nossa missão é proclamar o Evangelho de Jesus Cristo e promover a transformação de
-            vidas, através da pregação fiel da palavra de Deus.
-          </p>
-        </div>
-
-        {/* Cards */}
+      <section className="py-16 md:py-24 bg-secondary" aria-labelledby="missao-title">
         <div className="container-vision">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {missionCards.map((card) => {
+          <AnimatedSection className="text-center max-w-2xl mx-auto mb-14">
+            <span className="subtitle">Missão</span>
+            <h2 id="missao-title" className="section-title mt-4 mb-5">
+              Compartilhar o amor de Deus
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-lg">
+              Nossa missão é proclamar o Evangelho de Jesus Cristo e promover a transformação de
+              vidas, através da pregação fiel da palavra de Deus.
+            </p>
+          </AnimatedSection>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+            {missionCards.map((card, i) => {
               const CardWrapper = card.external ? "a" : Link;
               const cardProps = card.external
                 ? { href: card.link, target: "_blank", rel: "noopener noreferrer" }
                 : { to: card.link };
 
               return (
-                <CardWrapper
-                  key={card.title}
-                  {...(cardProps as any)}
-                  className="card-overlay min-h-[280px] flex items-end p-6 group"
-                  style={{ backgroundImage: `url(${card.image})` }}
-                >
-                  <div className="relative z-10 text-primary-foreground">
-                    <h3 className="text-lg font-bold mb-1">{card.title}</h3>
-                    <p className="text-sm text-primary-foreground/80 mb-2">{card.description}</p>
-                    <span className="text-sm font-medium text-accent group-hover:underline">
-                      Saiba mais →
-                    </span>
-                  </div>
-                </CardWrapper>
+                <AnimatedSection key={card.title} delay={i * 0.08}>
+                  <CardWrapper
+                    {...(cardProps as any)}
+                    className="card-overlay min-h-[320px] flex items-end p-7 group"
+                    style={{ backgroundImage: `url(${card.image})` }}
+                  >
+                    <div className="relative z-10 text-primary-foreground">
+                      <h3 className="text-xl font-bold mb-1.5">{card.title}</h3>
+                      <p className="text-sm text-primary-foreground/80 mb-3 leading-relaxed">{card.description}</p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
+                        Saiba mais <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </CardWrapper>
+                </AnimatedSection>
               );
             })}
           </div>
@@ -187,52 +212,50 @@ const Index = () => {
       </section>
 
       {/* Programação + Localização */}
-      <section className="py-12 md:py-20">
+      <section className="py-16 md:py-28">
         <div className="container-vision">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-16">
             {/* Programação */}
-            <div className="xl:col-span-6">
+            <AnimatedSection className="xl:col-span-6">
               <span className="subtitle">Fique por dentro</span>
-              <h2 className="section-title mt-5 mb-8">Nossa programação</h2>
-              <ul className="space-y-6">
-                <li className="border-l-2 border-foreground pl-5">
-                  <h3 className="font-bold text-lg mb-1">Culto</h3>
-                  <p className="text-foreground/80">
-                    Todos os domingos, às 18h30, nos reunimos como igreja para adorar a Deus e ouvir
-                    sua Palavra.
-                  </p>
-                </li>
-                <li className="border-l-2 border-foreground pl-5">
-                  <h3 className="font-bold text-lg mb-1">Células</h3>
-                  <p className="text-foreground/80 mb-3">
-                    Às terças, temos nossos encontros nas casas.
-                  </p>
-                  <Link
-                    to="/hubs"
-                    className="inline-block bg-primary text-primary-foreground px-5 py-2 rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+              <h2 className="section-title mt-4 mb-10">Nossa programação</h2>
+              <div className="space-y-6">
+                {scheduleItems.map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-5 p-5 rounded-2xl hover:bg-secondary transition-colors group"
                   >
-                    Encontre uma célula
-                  </Link>
-                </li>
-                <li className="border-l-2 border-foreground pl-5">
-                  <h3 className="font-bold text-lg mb-1">Casa do Encontro</h3>
-                  <p className="text-foreground/80">
-                    Às quintas, às 20h30, temos a Casa do Encontro, um momento de oração e
-                    compartilhar da Palavra.
-                  </p>
-                </li>
-              </ul>
-            </div>
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                      <item.icon size={22} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                      {item.cta && (
+                        <Link
+                          to={item.cta.to}
+                          className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:gap-2.5 transition-all"
+                        >
+                          {item.cta.label} <ArrowRight size={14} />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
 
             {/* Localização */}
-            <div className="xl:col-span-5 xl:col-start-8">
+            <AnimatedSection className="xl:col-span-5 xl:col-start-8" delay={0.15}>
               <span className="subtitle">Onde estamos</span>
-              <h2 className="section-title mt-5 mb-8">Araçatuba/SP</h2>
-              <div className="rounded-lg overflow-hidden mb-6">
-              <iframe
+              <h2 className="section-title mt-4 mb-10">Araçatuba/SP</h2>
+              <div className="rounded-2xl overflow-hidden mb-6 shadow-lg">
+                <iframe
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
                   width="100%"
-                  height="250"
+                  height="280"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -244,29 +267,36 @@ const Index = () => {
                 href="https://www.google.com/maps/place/R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/80 hover:text-accent transition-colors block"
+                className="flex items-start gap-3 p-4 rounded-2xl hover:bg-secondary transition-colors group"
               >
-                <strong className="text-foreground">Endereço</strong>
-                <br />
-                R. Ernesto Bergamaschi, 96 - Monterrey - Araçatuba/SP
+                <MapPin size={20} className="shrink-0 text-accent mt-0.5" />
+                <div>
+                  <strong className="text-foreground block text-sm">Endereço</strong>
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                    R. Ernesto Bergamaschi, 96 - Monterrey - Araçatuba/SP
+                  </span>
+                </div>
               </a>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* CTA Confissão de Fé */}
-      <section className="gradient-banner py-16 md:py-20">
-        <div className="container-vision flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-primary-foreground text-xl md:text-2xl font-medium leading-relaxed max-w-3xl">
-            Tendo sido, pois, justificados pela fé, temos paz com Deus, por nosso Senhor Jesus
-            Cristo.
-          </p>
+      <section className="gradient-banner py-20 md:py-24">
+        <div className="container-vision flex flex-col md:flex-row items-center justify-between gap-8">
+          <AnimatedSection>
+            <p className="text-primary-foreground text-xl md:text-3xl font-semibold leading-snug max-w-2xl">
+              Tendo sido, pois, justificados pela fé, temos paz com Deus, por nosso Senhor Jesus
+              Cristo.
+            </p>
+          </AnimatedSection>
           <Link
             to="/confissao-de-fe"
-            className="shrink-0 bg-primary text-primary-foreground px-6 py-3 rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="shrink-0 bg-primary-foreground text-foreground px-7 py-3.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
           >
             Confissão de fé
+            <ArrowRight size={15} />
           </Link>
         </div>
       </section>
