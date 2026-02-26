@@ -75,7 +75,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white z-40 shadow-xl"
+            className="fixed inset-0 top-16 md:top-20 bg-white z-[9999] h-screen w-full"
             role="navigation"
             aria-label="Menu principal"
           >
