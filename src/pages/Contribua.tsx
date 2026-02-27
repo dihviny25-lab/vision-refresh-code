@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import AnimatedSection from "../components/AnimatedSection";
 
 const donationMethods = [
   {
@@ -61,14 +62,21 @@ const Contribua = () => (
   <Layout>
     {/* Banner */}
     <section className="gradient-banner py-12 md:py-16 px-4" aria-label="Versículo">
-      <div className="container-vision max-w-4xl">
-        <p className="text-primary-foreground text-lg md:text-xl leading-relaxed">
+      <AnimatedSection className="container-vision max-w-4xl" variant="blur">
+        <div className="flex items-center gap-2.5 mb-5">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="20" fill="white" />
+            <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="hsl(var(--gradient-end))" />
+          </svg>
+          <span className="text-white/60 text-xs font-semibold uppercase tracking-[0.3em]">Vision Church</span>
+        </div>
+        <p className="text-white text-lg md:text-xl leading-relaxed">
           E Deus é poderoso para fazer que lhes seja acrescentada toda a graça, para que em todas
           as coisas, em todo o tempo, tendo tudo o que é necessário, vocês transbordem em toda boa
           obra.
         </p>
-        <p className="text-primary-foreground/70 mt-3 text-sm">2 Coríntios 9:8</p>
-      </div>
+        <p className="text-white/70 mt-3 text-sm">2 Coríntios 9:8</p>
+      </AnimatedSection>
     </section>
 
     {/* Content */}
@@ -76,7 +84,7 @@ const Contribua = () => (
       <div className="container-vision">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
           {/* Text */}
-          <div className="xl:col-span-5">
+          <AnimatedSection className="xl:col-span-5" variant="fade-right">
             <span className="subtitle">Contribua</span>
             <h1 id="contribua-title" className="section-title mt-5 mb-6">
               Formas de contribuir
@@ -96,35 +104,34 @@ const Contribua = () => (
                 Que os bens que Deus nos deu estejam no altar de Deus, a serviço a Deus
               </p>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Cards */}
           <div className="xl:col-span-6 xl:col-start-7">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {donationMethods.map((method) => (
-                <div
-                  key={method.title}
-                  className="bg-secondary rounded-lg p-6 text-center flex flex-col items-center"
-                >
-                  <div className="text-foreground mb-3">{method.icon}</div>
-                  <h3 className="font-bold text-lg mb-2">{method.title}</h3>
-                  <p className="text-sm text-foreground/70 mb-1">{method.description}</p>
-                  {method.detail && (
-                    <p className="text-sm text-foreground/80 whitespace-pre-line font-medium">
-                      {method.detail}
-                    </p>
-                  )}
-                  {method.link && (
-                    <a
-                      href={method.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-block bg-accent text-accent-foreground px-5 py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity"
-                    >
-                      {method.linkText}
-                    </a>
-                  )}
-                </div>
+              {donationMethods.map((method, i) => (
+                <AnimatedSection key={method.title} delay={i * 0.08} variant="scale">
+                  <div className="bg-secondary rounded-2xl p-6 text-center flex flex-col items-center h-full">
+                    <div className="gradient-text mb-3">{method.icon}</div>
+                    <h3 className="font-bold text-lg mb-2">{method.title}</h3>
+                    <p className="text-sm text-foreground/70 mb-1">{method.description}</p>
+                    {method.detail && (
+                      <p className="text-sm text-foreground/80 whitespace-pre-line font-medium">
+                        {method.detail}
+                      </p>
+                    )}
+                    {method.link && (
+                      <a
+                        href={method.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-block gradient-banner text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+                      >
+                        {method.linkText}
+                      </a>
+                    )}
+                  </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -134,7 +141,7 @@ const Contribua = () => (
 
     {/* Monthly contribution */}
     <section className="py-12 md:py-16 bg-secondary" aria-labelledby="monthly-title">
-      <div className="container-vision text-center">
+      <AnimatedSection className="container-vision text-center" variant="fade-up">
         <h2 id="monthly-title" className="section-title mb-8">
           Contribua mensalmente para a reforma do nosso novo prédio
         </h2>
@@ -145,7 +152,7 @@ const Contribua = () => (
               href={val.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground px-6 py-3 rounded font-bold text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold text-sm hover:opacity-80 transition-all"
             >
               {val.label}
             </a>
@@ -154,12 +161,12 @@ const Contribua = () => (
             href="https://link.mercadopago.com.br/dizimovision"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-accent-foreground px-6 py-3 rounded font-bold text-sm hover:opacity-90 transition-opacity"
+            className="gradient-banner text-white px-6 py-3 rounded-full font-bold text-sm hover:opacity-90 transition-opacity"
           >
             Doação Única
           </a>
         </div>
-      </div>
+      </AnimatedSection>
     </section>
   </Layout>
 );

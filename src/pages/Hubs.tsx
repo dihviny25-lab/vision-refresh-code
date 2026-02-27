@@ -50,24 +50,33 @@ const celulas = [
 const Hubs = () => {
   return (
     <Layout>
+      {/* Hero banner */}
+      <section className="gradient-banner py-12 md:py-16" aria-label="Células header">
+        <AnimatedSection className="container-vision text-center" variant="blur">
+          <div className="flex items-center justify-center gap-2.5 mb-4">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="20" fill="white" />
+              <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="hsl(var(--gradient-end))" />
+            </svg>
+            <span className="text-white/70 text-xs font-semibold uppercase tracking-[0.3em]">Vision Cells</span>
+          </div>
+          <h1 className="section-title text-white">
+            Encontre a célula mais próxima de você
+          </h1>
+          <p className="text-white/80 leading-relaxed text-lg mt-4 max-w-2xl mx-auto">
+            Nossas células são pequenos grupos que se encontram semanalmente para compartilhar a
+            palavra de Deus e criar amizades profundas e reais.
+          </p>
+        </AnimatedSection>
+      </section>
+
       <section className="py-16 md:py-28" aria-labelledby="celulas-title">
         <div className="container-vision">
-          <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
-            <span className="subtitle">Células</span>
-            <h1 id="celulas-title" className="section-title mt-4 mb-5">
-              Encontre a célula mais próxima de você
-            </h1>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              Nossas células são pequenos grupos que se encontram semanalmente para compartilhar a
-              palavra de Deus e criar amizades profundas e reais.
-            </p>
-          </AnimatedSection>
-
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {celulas.map((celula, i) => (
               <AnimatedSection key={celula.name} delay={i * 0.06}>
-                <div className="bg-secondary rounded-2xl p-6 hover:shadow-lg hover:shadow-foreground/5 transition-all duration-300 h-full flex flex-col">
-                  <h2 className="text-lg font-bold text-foreground mb-4">{celula.name}</h2>
+                <div className="bg-secondary rounded-2xl p-6 hover:shadow-lg hover:shadow-foreground/5 transition-all duration-300 h-full flex flex-col border-t-4 border-t-transparent hover:border-t-accent">
+                  <h2 className="text-lg font-bold text-foreground mb-4 gradient-text">{celula.name}</h2>
                   <div className="space-y-3 text-sm flex-1">
                     <div className="flex items-start gap-2.5">
                       <Users size={15} className="shrink-0 text-accent mt-0.5" />
