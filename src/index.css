@@ -24,7 +24,7 @@
     --muted: 30 5% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 24 95% 53%;
+    --accent: 244 56% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +32,7 @@
 
     --border: 0 0% 92%;
     --input: 0 0% 90%;
-    --ring: 24 95% 53%;
+    --ring: 244 56% 38%;
 
     --radius: 0.75rem;
 
@@ -41,8 +41,9 @@
     --topbar-fg: 0 0% 100%;
     --footer-bg: 0 0% 4%;
     --footer-fg: 0 0% 100%;
-    --gradient-start: 24 95% 53%;
-    --gradient-end: 15 90% 45%;
+    --gradient-start: 14 89% 54%;
+    --gradient-end: 244 56% 38%;
+    --accent-orange: 14 89% 54%;
     --card-overlay: 0 0% 0%;
 
     --sidebar-background: 0 0% 98%;
@@ -68,13 +69,13 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
-    --accent: 24 95% 53%;
+    --accent: 244 56% 38%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 16%;
     --input: 0 0% 16%;
-    --ring: 24 95% 53%;
+    --ring: 244 56% 38%;
   }
 }
 
@@ -94,7 +95,18 @@
 
 @layer components {
   .subtitle {
-    @apply text-xs font-semibold uppercase tracking-[0.3em] text-accent;
+    @apply text-xs font-semibold uppercase tracking-[0.3em];
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-title {
