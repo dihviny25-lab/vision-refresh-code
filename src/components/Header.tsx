@@ -50,7 +50,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/contribua"
-            className="hidden md:inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="hidden md:inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity gradient-banner"
           >
             Contribua
             <ArrowRight size={14} />

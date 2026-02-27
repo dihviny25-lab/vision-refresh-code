@@ -161,8 +161,8 @@ const Index = () => {
                         onClick={() => setCurrentSlide(i)}
                         className={`rounded-full transition-all duration-300 ${
                           i === currentSlide
-                            ? "bg-accent w-6 h-2.5"
-                            : "bg-primary-foreground/40 w-2.5 h-2.5 hover:bg-primary-foreground/60"
+                        ? "gradient-banner w-6 h-2.5"
+                        : "bg-primary-foreground/40 w-2.5 h-2.5 hover:bg-primary-foreground/60"
                         }`}
                         aria-label={`Ir para foto ${i + 1}`}
                       />
@@ -207,8 +207,8 @@ const Index = () => {
                     <div className="relative z-10 text-primary-foreground">
                       <h3 className="text-xl font-bold mb-1.5">{card.title}</h3>
                       <p className="text-sm text-primary-foreground/80 mb-3 leading-relaxed">{card.description}</p>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
-                        Saiba mais <ArrowRight size={14} />
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold gradient-text group-hover:gap-2.5 transition-all">
+                        Saiba mais <ArrowRight size={14} className="text-accent" />
                       </span>
                     </div>
                   </CardWrapper>
@@ -235,7 +235,7 @@ const Index = () => {
                     variant="fade-up"
                   >
                     <div className="flex gap-5 p-5 rounded-2xl hover:bg-secondary transition-colors group">
-                      <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                      <div className="shrink-0 w-12 h-12 rounded-xl gradient-banner flex items-center justify-center text-white">
                         <item.icon size={22} />
                       </div>
                       <div>
@@ -246,7 +246,7 @@ const Index = () => {
                         {item.cta && (
                           <Link
                             to={item.cta.to}
-                            className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:gap-2.5 transition-all"
+                            className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold gradient-text hover:gap-2.5 transition-all"
                           >
                             {item.cta.label} <ArrowRight size={14} />
                           </Link>
