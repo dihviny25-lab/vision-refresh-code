@@ -265,7 +265,7 @@ const Index = () => {
               <AnimatedSection variant="scale" delay={0.3}>
                 <div className="rounded-2xl overflow-hidden mb-6 shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBY4dXj7bJEru3VCYJ1GR5-CqN2dU2Kr2c&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
+                    src="https://share.google/s0NY0E3Fql8fudqcs"
                     width="100%"
                     height="280"
                     style={{ border: 0 }}
