@@ -86,4 +86,4 @@ const Células = () => {
   );
 };
 
-export default Hubs;
+export default Células;
