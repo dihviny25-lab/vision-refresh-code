@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import logoWhite from "@/assets/logo-vision-white.png";
 
-const celulas = [
+const Celulas = [
   {
     name: "Célula",
     leaders: "Pr Matheus e Karol",
@@ -36,7 +36,7 @@ const celulas = [
   },
   ];
 
-const Células = () => {
+const Celulas = () => {
   return (
     <Layout>
       {/* Hero banner */}
