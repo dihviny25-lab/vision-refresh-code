@@ -8,17 +8,17 @@ import logoWhite from "@/assets/logo-vision-white.png";
 
 const CONTEUDO_LITURGIA = {
   // Data do culto
-  data: "09 de Março de 2025",
+  data: "08 de Março de 2026",
   subtitulo: "Culto Dominical",
 
   // Roteiro do culto — adicione ou remova itens livremente
   roteiro: [
-    { horario: "09:00", titulo: "Abertura", descricao: "Acolhimento e boas-vindas" },
-    { horario: "09:10", titulo: "Louvor", descricao: "Momento de adoração congregacional" },
-    { horario: "09:40", titulo: "Oração", descricao: "Oração pastoral e intercessão" },
-    { horario: "09:50", titulo: "Oferta", descricao: "Momento de contribuição" },
-    { horario: "10:00", titulo: "Palavra", descricao: "Pregação — Pr. Matheus Dan" },
-    { horario: "10:40", titulo: "Santa Ceia", descricao: "Celebração da Ceia do Senhor" },
+    { horario: "18:00", titulo: "Oração com os Voluntários", descricao: "Responsavél: Pr. Matheus" },
+    { horario: "18:20", titulo: "Abertura", descricao: "Acolhimento e boas-vindas" },
+    { horario: "18:30", titulo: "Louvor", descricao: "Momento de adoração congregacional" },
+    { horario: "19:00", titulo: "Avisos e Ofertas", descricao: "Momento de contribuição" },
+    { horario: "19:10", titulo: "Ceia do Senhor", descricao: "Celebração da Ceia do Senhor" }, 
+    { horario: "19h:00", titulo: "Palavra", descricao: "Pregação — Pr. Matheus Dan" },
     { horario: "10:55", titulo: "Avisos", descricao: "Informes e agenda da semana" },
     { horario: "11:00", titulo: "Bênção", descricao: "Bênção apostólica e encerramento" },
   ],
