@@ -13,22 +13,21 @@ const CONTEUDO_LITURGIA = {
 
   // Roteiro do culto — adicione ou remova itens livremente
   roteiro: [
-    { horario: "18:00", titulo: "Oração com os Voluntários", descricao: "Responsavél: Pr. Matheus" },
+    { horario: "18:00", titulo: "Oração com os Voluntários", descricao: "Responsável: Pr. Matheus" },
     { horario: "18:20", titulo: "Abertura", descricao: "Acolhimento e boas-vindas" },
     { horario: "18:30", titulo: "Louvor", descricao: "Jesus em tua presença • Na terra como no céu • Sublime • Toque dos céus" },
     { horario: "19:00", titulo: "Avisos e Ofertas", descricao: "Boas-vindas aos visitantes • Novos membros: preencher ficha de membros na recepção • Células em treinamento • Culto dos jovens aos sábados às 19h30 • Inscrição do curso de Teologia" },
     { horario: "19:10", titulo: "Ceia do Senhor", descricao: "Celebração da Ceia do Senhor" }, 
-    { horario: "19h:30", titulo: "Palavra", descricao: "Pregação — Pr. Matheus Dan" },
+    { horario: "19:30", titulo: "Palavra", descricao: "Pregação — Pr. Matheus Dan" },
     { horario: "20:10", titulo: "Bênção", descricao: "Bênção apostólica e encerramento" },
-    { horario: "20:30", titulo: "Fechamento", descricao: "Responsavél: Evandro" },
+    { horario: "20:30", titulo: "Fechamento", descricao: "Responsável: Evandro" },
   ],
 
   // Escalas — adicione ou remova ministérios e nomes livremente
   escalas: [
     {
       ministerio: "Louvor",
-      nomes: ["Aline - Vocal", "Amanda - Vocal", "Ricardo - Vocal / guitarra", "Patrick - Contra baixo", "Gabriel Cordeiro - Bateria"
-],
+      nomes: ["Aline - Vocal", "Amanda - Vocal", "Ricardo - Vocal / guitarra", "Patrick - Contra baixo", "Gabriel Cordeiro - Bateria"],
     },
     {
       ministerio: "Recepção",
