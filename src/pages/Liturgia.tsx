@@ -41,10 +41,6 @@ const CONTEUDO_LITURGIA = {
       ministerio: "Infantil",
       nomes: ["Berçário: Jéssica", "Cordeirinhos: Camila e Marta", "Ovelhinhas: Alexandre e Paula"],
     },
-    {
-      ministerio: "Diaconia",
-      nomes: ["Carlos Eduardo", "Bruna Martins", "Felipe Augusto"],
-    },
   ],
 };
 
