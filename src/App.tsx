@@ -9,6 +9,7 @@ import Musicas from "./pages/Musicas";
 import Contribua from "./pages/Contribua";
 import ConfissaoDeFe from "./pages/ConfissaoDeFe";
 import Hubs from "./pages/Hubs";
+import Liturgia from "./pages/Liturgia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/contribua" element={<Contribua />} />
           <Route path="/confissao-de-fe" element={<ConfissaoDeFe />} />
           <Route path="/hubs" element={<Hubs />} />
+          <Route path="/liturgia" element={<Liturgia />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
