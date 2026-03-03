@@ -86,4 +86,4 @@ const Células = () => {
   );
 };
 
-export default Células;
+export default Celulas;
