@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
+import logoWhite from "@/assets/logo-vision-white.png";
 
 const Lideranca = () => (
   <Layout>
@@ -8,11 +9,7 @@ const Lideranca = () => (
       <div className="container-vision text-center">
         <AnimatedSection variant="blur">
           <div className="flex items-center justify-center gap-2.5 mb-4">
-            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="20" fill="white" />
-              <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="hsl(var(--gradient-end))" />
-            </svg>
-            <span className="text-white/70 text-xs font-semibold uppercase tracking-[0.3em]">Vision Church</span>
+            <img src={logoWhite} alt="Igreja Vision" className="h-6 w-auto opacity-70" />
           </div>
           <h1 id="lideranca-title" className="section-title text-white">
             Conheça nosso pastor
