@@ -32,15 +32,17 @@ const CONTEUDO_LITURGIA = {
     },
     {
       ministerio: "Recepção",
-      nomes: ["Rose Moreira", "Natalia", "Amanda Lourenço"],
+      nomes: ["Recepção: Cibele, Roseli e Lorraine", "Manutenção e ofertas: Leonardo e Renan", "Estacionamento: Cabral"]
+["Rose Moreira", "Natalia", "Amanda Lourenço"],
     },
     {
       ministerio: "Mídia & Som",
-      nomes: ["Rafael Santos", "Thiago Lima"],
+      nomes: ["Filmagem: Eyshila", "Fotografia: João", "Slides: Luiz"],
     },
     {
       ministerio: "Infantil",
-      nomes: ["Juliana Alves", "Patrícia Rocha"],
+      nomes: ["Berçário: Jéssica", "Cordeirinhos: Camila e Marta", "Ovelhinhas: Alexandre e Paula"
+"],
     },
     {
       ministerio: "Diaconia",
