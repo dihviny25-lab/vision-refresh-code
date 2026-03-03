@@ -30,7 +30,7 @@ const missionCards = [
     title: "Células",
     description: "Pequenos grupos reunidos em casas para orar e estudar a Bíblia",
     image: "/images/card-hubs.jpg",
-    link: "/hubs",
+    link: "/celula",
   },
   {
     title: "Seja membro",
@@ -51,7 +51,7 @@ const scheduleItems = [
     icon: Users,
     title: "Células",
     description: "Às terças, temos nossos encontros nas casas.",
-    cta: { label: "Encontre uma célula", to: "/hubs" },
+    cta: { label: "Encontre uma célula", to: "/celula" },
   },
   {
     icon: BookOpen,
