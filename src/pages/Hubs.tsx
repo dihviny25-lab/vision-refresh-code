@@ -34,21 +34,9 @@ const celulas = [
     address: "Rua Tupinambás, 567, São João - Araçatuba/SP",
     day: "Terça-feira, 21h",
   },
-  {
-    name: "Célula Inside",
-    leaders: "Lucas",
-    address: "Rua Silvio José Venturolli, 340, Umuarama - Araçatuba/SP",
-    day: "Terça-feira, 20h",
-  },
-  {
-    name: "Célula Maanaim",
-    leaders: "Henrique e Beatriz",
-    address: "Rua Domingos Paludetto, 1186, Simões - Birigui/SP",
-    day: "Terça-feira, 20h30",
-  },
-];
+  ];
 
-const Hubs = () => {
+const Células = () => {
   return (
     <Layout>
       {/* Hero banner */}
