@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
+import logoWhite from "@/assets/logo-vision-white.png";
 
 const donationMethods = [
   {
@@ -64,11 +65,7 @@ const Contribua = () => (
     <section className="gradient-banner py-12 md:py-16 px-4" aria-label="Versículo">
       <AnimatedSection className="container-vision max-w-4xl" variant="blur">
         <div className="flex items-center gap-2.5 mb-5">
-          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <circle cx="20" cy="20" r="20" fill="white" />
-            <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="hsl(var(--gradient-end))" />
-          </svg>
-          <span className="text-white/60 text-xs font-semibold uppercase tracking-[0.3em]">Vision Church</span>
+          <img src={logoWhite} alt="Igreja Vision" className="h-5 w-auto opacity-60" />
         </div>
         <p className="text-white text-lg md:text-xl leading-relaxed">
           E Deus é poderoso para fazer que lhes seja acrescentada toda a graça, para que em todas

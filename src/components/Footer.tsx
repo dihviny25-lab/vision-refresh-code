@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoWhite from "@/assets/logo-vision-white.png";
 
 const Footer = () => (
   <footer className="bg-footer text-footer-foreground">
@@ -7,11 +8,7 @@ const Footer = () => (
         {/* Logo + Description */}
         <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-2.5 mb-5">
-            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="20" fill="white" />
-              <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="hsl(var(--footer-bg))" />
-            </svg>
-            <span className="text-lg font-extrabold tracking-tight">VISION</span>
+            <img src={logoWhite} alt="Igreja Vision" className="h-7 w-auto" />
           </div>
           <p className="text-sm text-footer-foreground/60 leading-relaxed max-w-xs">
             Uma igreja cristã evangélica reformada, de confissão batista, em Araçatuba/SP.

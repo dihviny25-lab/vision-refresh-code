@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoDark from "@/assets/logo-vision-dark.png";
 
 const navLinks = [
   { label: "Início", href: "/" },
@@ -40,11 +41,7 @@ const Header = () => {
     >
       <div className="container-vision flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Igreja Vision - Página inicial">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="20" cy="20" r="20" fill="currentColor" className="text-foreground" />
-            <path d="M20 8C20 8 14 16 14 22C14 25.3 16.7 28 20 28C23.3 28 26 25.3 26 22C26 16 20 8 20 8Z" fill="currentColor" className="text-background" />
-          </svg>
-          <span className="text-xl font-extrabold tracking-tight text-foreground">VISION</span>
+          <img src={logoDark} alt="Igreja Vision" className="h-8 md:h-9 w-auto" />
         </Link>
 
         <div className="flex items-center gap-3">
