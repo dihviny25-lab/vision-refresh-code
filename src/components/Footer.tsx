@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoBlack from "@/assets/logo-black.jpg";
+import logoBlack from "@/assets/Logo-black.jpg";
 
 const Footer = () => (
   <footer className="bg-footer text-footer-foreground">
