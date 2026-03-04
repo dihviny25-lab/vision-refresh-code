@@ -76,7 +76,7 @@ const Header = () => {
       role="navigation"
       aria-label="Menu principal"
     >
-      <div className="container-vision py-12 flex flex-col gap-2">
+      <div className="container-vision py-12 grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
         {/* Links Principais */}
         {navLinks.map((link, i) => (
           <motion.div
