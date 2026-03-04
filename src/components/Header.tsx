@@ -11,6 +11,19 @@ const navLinks = [
   { label: "Músicas", href: "/musicas" },
   { label: "Contribua", href: "/contribua" },
   { label: "Confissão de fé", href: "/confissao-de-fe" },
+  {/* Seção Para Membros */}
+<div className="mt-8">
+  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Para Membros</p>
+  <Link to="/avisos" className="block py-2 text-lg font-medium text-black">Grupo de avisos</Link>
+  <Link to="/voluntarios" className="block py-2 text-lg font-medium text-black">Formulário para voluntários</Link>
+</div>
+
+{/* Seção Redes Sociais */}
+<div className="mt-8 pt-8 border-t border-gray-100">
+  <a href="https://instagram.com/igrejavision" className="block py-2 text-lg text-black">Instagram</a>
+  <a href="https://facebook.com/igrejavision" className="block py-2 text-lg text-black">Facebook</a>
+  <a href="https://youtube.com/igrejavision" className="block py-2 text-lg text-black">Youtube</a>
+</div>
 ];
 
 const Header = () => {
