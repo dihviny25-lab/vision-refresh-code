@@ -8,7 +8,7 @@ import Lideranca from "./pages/Lideranca";
 import Musicas from "./pages/Musicas";
 import Contribua from "./pages/Contribua";
 import ConfissaoDeFe from "./pages/ConfissaoDeFe";
-import Hubs from "./pages/Celula";
+import Celula from "./pages/Celula";
 import Liturgia from "./pages/Liturgia";
 import NotFound from "./pages/NotFound";
 

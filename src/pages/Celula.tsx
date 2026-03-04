@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import logoWhite from "@/assets/logo-vision-white.png";
 
-const Celulas = [
+const celulasData = [
   {
     name: "Célula",
     leaders: "Pr Matheus e Karol",
@@ -34,9 +34,9 @@ const Celulas = [
     address: "Rua Tupinambás, 567, São João - Araçatuba/SP",
     day: "Terça-feira, 21h",
   },
-  ];
+];
 
-const Celulas = () => {
+const Celula = () => {
   return (
     <Layout>
       {/* Hero banner */}
@@ -58,7 +58,7 @@ const Celulas = () => {
       <section className="py-16 md:py-28" aria-labelledby="celulas-title">
         <div className="container-vision">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {celulas.map((celula, i) => (
+            {celulasData.map((celula, i) => (
               <AnimatedSection key={celula.name} delay={i * 0.06}>
                 <div className="bg-secondary rounded-2xl p-6 hover:shadow-lg hover:shadow-foreground/5 transition-all duration-300 h-full flex flex-col border-t-4 border-t-transparent hover:border-t-accent">
                   <h2 className="text-lg font-bold text-foreground mb-4 gradient-text">{celula.name}</h2>
@@ -86,4 +86,4 @@ const Celulas = () => {
   );
 };
 
-export default Celulas;
+export default Celula;
