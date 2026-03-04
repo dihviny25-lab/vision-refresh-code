@@ -8,31 +8,31 @@ const celulasData = [
     name: "Célula",
     leaders: "Pr Matheus e Karol",
     address: "Rua Dr Péricles Pimentel Salgado, 152, Umuarama - Araçatuba/SP",
-    day: "Terça-feira, 20h",
+    day: "Quinta-feira, 20h",
   },
   {
     name: "Célula Escolhidos",
     leaders: "Marcos e Lorraine",
     address: "Rua Maria Floriano Pavan, 86, Jardim das Oliveiras - Araçatuba/SP",
-    day: "Terça-feira, 20h",
+    day: "Quinta-feira, 20h",
   },
   {
     name: "Célula Forjados na Fé",
     leaders: "Diego e Jéssica",
     address: "Rua Vicente de Carvalho, 1575, Hilda Mandarino - Araçatuba/SP",
-    day: "Terça-feira, 21h",
+    day: "Quinta-feira, 21h",
   },
   {
     name: "Célula Aviação",
     leaders: "Marcio Cabral e Roseli",
     address: "Rua Dona Ida, 2124, Aviação - Araçatuba/SP",
-    day: "Terça-feira, 20h30",
+    day: "Quinta-feira, 20h30",
   },
   {
     name: "Célula Gaditas",
     leaders: "Dênis",
     address: "Rua Tupinambás, 567, São João - Araçatuba/SP",
-    day: "Terça-feira, 21h",
+    day: "Quinta-feira, 21h",
   },
 ];
 
