@@ -9,7 +9,7 @@ const TopBar = () => (
       </span>
       <span className="hidden sm:inline text-topbar-foreground/30">|</span>
       <a
-        href="https://www.google.com/maps/place/R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
+        href="https://maps.app.goo.gl/gYFii8YdbC9aGYpK8"
         target="_blank"
         rel="noopener noreferrer"
         className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors"
