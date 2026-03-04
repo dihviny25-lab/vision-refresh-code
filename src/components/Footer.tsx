@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoWhite from "@/assets/logo-black.png";
+import logoBlack from "@/assets/logo-black.jpg";
 
 const Footer = () => (
   <footer className="bg-footer text-footer-foreground">
@@ -8,7 +8,7 @@ const Footer = () => (
         {/* Logo + Description */}
         <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-2.5 mb-5">
-            <img src={logoWhite} alt="Igreja Vision" className="h-12 w-auto" />
+            <img src={logoBlack} alt="Igreja Vision" className="h-12 w-auto" />
           </div>
           <p className="text-sm text-footer-foreground/60 leading-relaxed max-w-xs">
             Uma igreja cristã evangélica reformada, de confissão batista, em Araçatuba/SP.
