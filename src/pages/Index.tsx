@@ -277,7 +277,7 @@ const Index = () => {
                 </div>
               </AnimatedSection>
               <a
-                href="https://www.google.com/maps/place/R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP,+16056-680"
+                href="https://maps.app.goo.gl/gYFii8YdbC9aGYpK8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 p-4 rounded-2xl hover:bg-secondary transition-colors group"
