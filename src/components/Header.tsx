@@ -39,7 +39,7 @@ const Header = () => {
         scrolled ? "shadow-sm border-b border-border" : ""
       }`}
     >
-      <div className="container-vision flex items-center justify-between h-20 md:h-26">
+      <div className="container-vision flex items-center justify-between h-24 md:h-30">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Igreja Vision - Página inicial">
           <img src={logoDark} alt="Igreja Vision" className="h-16 md:h-24 w-auto object-contain" />
         </Link>
