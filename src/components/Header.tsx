@@ -54,7 +54,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-2 text-foreground font-medium text-sm px-3 py-2 rounded-lg hover:bg-secondary transition-colors"
+            className="flex items-center w-full text-left py-4 border-b border-gray-100 text-2xl font-semibold text-black hover:pl-2 transition-all"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
           >
@@ -72,7 +72,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white/50 backdrop-blur-md z-50 w-full h-screen"
+            className="fixed inset-0 top-16 md:top-20 bg-white/70 backdrop-blur-md z-50 w-full h-screen"
             role="navigation"
             aria-label="Menu principal"
           >
