@@ -7,7 +7,7 @@ import logoDark from "@/assets/logo-vision-dark.png";
 const navLinks = [
   { label: "Início", href: "/" },
   { label: "Liderança", href: "/lideranca" },
-  { label: "Células", href: "/hubs" },
+  { label: "Células", href: "/celula" },
   { label: "Músicas", href: "/musicas" },
   { label: "Contribua", href: "/contribua" },
   { label: "Confissão de fé", href: "/confissao-de-fe" },
@@ -72,7 +72,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white z-[9999] h-screen w-full"
+            className="fixed inset-0 top-16 md:top-20 bg-white z-40 shadow-xl"
             role="navigation"
             aria-label="Menu principal"
           >
