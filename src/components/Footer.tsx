@@ -50,10 +50,15 @@ const Footer = () => (
         {/* Endereço + Social */}
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-widest text-footer-foreground/40 mb-5">Endereço</h3>
-          <p className="text-sm text-footer-foreground/70 leading-relaxed mb-6">
+          <a
+            href="https://maps.app.goo.gl/gYFii8YdbC9aGYpK8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-footer-foreground/70 leading-relaxed mb-6 block hover:text-accent transition-colors"
+          >
             R. Ernesto Bergamaschi, 96<br />
             Monterrey - Araçatuba/SP
-          </p>
+          </a>
           <div className="flex gap-2">
             {[
               { label: "Facebook", href: "https://facebook.com", icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> },
