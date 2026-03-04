@@ -50,13 +50,13 @@ const scheduleItems = [
   {
     icon: Users,
     title: "Células",
-    description: "Às terças, temos nossos encontros nas casas.",
+    description: "Às quintas, temos nossos encontros nas casas.",
     cta: { label: "Encontre uma célula", to: "/celula" },
   },
   {
     icon: BookOpen,
     title: "Casa do Encontro",
-    description: "Às quintas, às 20h30, temos a Casa do Encontro, um momento de oração e compartilhar da Palavra.",
+    description: "Às terças, às 20h30, temos a Casa do Encontro, um momento de oração e compartilhar da Palavra.",
   },
 ];
 
