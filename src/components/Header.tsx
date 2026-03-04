@@ -41,7 +41,7 @@ const Header = () => {
     >
       <div className="container-vision flex items-center justify-between h-24 md:h-30">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Igreja Vision - Página inicial">
-          <img src={logoDark} alt="Igreja Vision" className="h-14 md:h-22 w-auto object-contain" />
+          <img src={logoDark} alt="Igreja Vision" className="h-16 md:h-24 w-auto object-contain" />
         </Link>
 
         <div className="flex items-center gap-3">
