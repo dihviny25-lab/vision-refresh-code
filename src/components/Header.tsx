@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-background/95 backdrop-blur-md sticky top-0 z-50 transition-shadow duration-300 ${
+      className={`bg-background/70 backdrop-blur-md sticky top-0 z-50 transition-shadow duration-300 ${
         scrolled ? "shadow-sm border-b border-border" : ""
       }`}
     >
@@ -72,7 +72,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white/90 backdrop-blur-md z-40 shadow-xl"
+            className="fixed inset-0 top-16 md:top-20 bg-white/50 backdrop-blur-md z-50 shadow-xl"
             role="navigation"
             aria-label="Menu principal"
           >
