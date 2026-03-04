@@ -11,20 +11,7 @@ const navLinks = [
   { label: "Músicas", href: "/musicas" },
   { label: "Contribua", href: "/contribua" },
   { label: "Confissão de fé", href: "/confissao-de-fe" },
-  {/* Seção Para Membros */}
-<div className="mt-8">
-  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Para Membros</p>
-  <Link to="/avisos" className="block py-2 text-lg font-medium text-black">Grupo de avisos</Link>
-  <Link to="/voluntarios" className="block py-2 text-lg font-medium text-black">Formulário para voluntários</Link>
-</div>
-
-{/* Seção Redes Sociais */}
-<div className="mt-8 pt-8 border-t border-gray-100">
-  <a href="https://instagram.com/igrejavision" className="block py-2 text-lg text-black">Instagram</a>
-  <a href="https://facebook.com/igrejavision" className="block py-2 text-lg text-black">Facebook</a>
-  <a href="https://youtube.com/igrejavision" className="block py-2 text-lg text-black">Youtube</a>
-</div>
-];
+ ];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,7 +54,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center w-full text-left py-4 border-b border-gray-100 text-2xl font-semibold text-black hover:pl-2 transition-all"
+            className="flex items-center w-full text-left py-4 border-b border-gray-100 font-semibold text-black hover:pl-2 transition-all"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
           >
@@ -79,41 +66,52 @@ const Header = () => {
 
       {/* Full-screen menu */}
       <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white/70 backdrop-blur-md z-50 w-full h-screen"
-            role="navigation"
-            aria-label="Menu principal"
+  {menuOpen && (
+    <motion.nav
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="fixed inset-0 top-16 md:top-20 bg-white z-50 w-full h-screen overflow-y-auto"
+      role="navigation"
+      aria-label="Menu principal"
+    >
+      <div className="container-vision py-12 flex flex-col gap-2">
+        {/* Links Principais */}
+        {navLinks.map((link, i) => (
+          <motion.div
+            key={link.href}
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.05, duration: 0.3 }}
           >
-            <div className="container-vision py-12 flex flex-col gap-2">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                >
-                  <Link
-                    to={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`block text-2xl sm:text-3xl font-bold py-3 border-b border-border transition-colors ${
-                      location.pathname === link.href
-                        ? "text-accent"
-                        : "text-foreground hover:text-accent"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+            <Link
+              to={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="block text-2xl font-bold py-4 border-b border-gray-100 text-black hover:pl-2 transition-all"
+            >
+              {link.label}
+            </Link>
+          </motion.div>
+        ))}
+
+        {/* Seção Para Membros */}
+        <div className="mt-8">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Para Membros</p>
+          <Link to="/avisos" onClick={() => setMenuOpen(false)} className="block py-2 text-lg font-medium text-black">Grupo de avisos</Link>
+          <Link to="/voluntarios" onClick={() => setMenuOpen(false)} className="block py-2 text-lg font-medium text-black">Formulário para voluntários</Link>
+        </div>
+
+        {/* Seção Redes Sociais */}
+        <div className="mt-8 pt-8 border-t border-gray-100 pb-20">
+          <a href="https://instagram.com/igrejavision" target="_blank" rel="noreferrer" className="block py-2 text-lg text-black">Instagram</a>
+          <a href="https://facebook.com/igrejavision" target="_blank" rel="noreferrer" className="block py-2 text-lg text-black">Facebook</a>
+          <a href="https://youtube.com/igrejavision" target="_blank" rel="noreferrer" className="block py-2 text-lg text-black">Youtube</a>
+        </div>
+      </div>
+    </motion.nav>
+  )}
+</AnimatePresence>
     </header>
   );
 };
