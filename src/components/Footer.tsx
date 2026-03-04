@@ -21,7 +21,7 @@ const Footer = () => (
           <nav aria-label="Links do rodapé">
             <ul className="space-y-3 text-sm">
               <li><Link to="/contribua" className="text-footer-foreground/70 hover:text-accent transition-colors">Contribua</Link></li>
-              <li><Link to="/hubs" className="text-footer-foreground/70 hover:text-accent transition-colors">Células</Link></li>
+              <li><Link to="/celula" className="text-footer-foreground/70 hover:text-accent transition-colors">Células</Link></li>
               <li><Link to="/confissao-de-fe" className="text-footer-foreground/70 hover:text-accent transition-colors">Confissão de fé</Link></li>
               <li><Link to="/musicas" className="text-footer-foreground/70 hover:text-accent transition-colors">Músicas</Link></li>
               <li><Link to="/lideranca" className="text-footer-foreground/70 hover:text-accent transition-colors">Liderança</Link></li>
