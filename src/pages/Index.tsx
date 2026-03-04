@@ -265,15 +265,15 @@ const Index = () => {
               <AnimatedSection variant="scale" delay={0.3}>
                 <div className="rounded-2xl overflow-hidden mb-6 shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.5!2d-50.4321!3d-21.2089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzMyLjAiUyA1MMKwMjUnNTUuNiJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr&q=R.+Ernesto+Bergamaschi,+96+-+Monterrey,+Ara%C3%A7atuba+-+SP"
-                    width="100%"
-                    height="280"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Localização da Igreja Vision no mapa"
-                  />
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.326871033285!2d-50.43412442395568!3d-21.18252528005607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9496441d420a830d%3A0x4d9c66ce6256d8e1!2sR.%20Ernesto%20Bergamaschi%2C%2096%20-%20Monterrey%2C%20Ara%C3%A7atuba%20-%20SP%2C%2016056-680!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+  width="100%"
+  height="280"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Localização da Igreja Vision"
+/>
                 </div>
               </AnimatedSection>
               <a
