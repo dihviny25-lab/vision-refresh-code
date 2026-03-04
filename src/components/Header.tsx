@@ -68,11 +68,11 @@ const Header = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
-            initial={{ opacity: 10, y: -8 }}
-            animate={{ opacity: 10, y: 0 }}
-            exit={{ opacity: 10, y: -8 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 top-16 md:top-20 bg-white/50 z-50 w-full h-screen"
+            className="fixed inset-0 top-16 md:top-20 bg-white/10 z-50 w-full h-screen"
             role="navigation"
             aria-label="Menu principal"
           >
